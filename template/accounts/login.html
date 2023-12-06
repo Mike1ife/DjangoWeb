@@ -1,0 +1,24 @@
+{% extends 'info.html' %}
+
+{% block content %}
+
+<h1>AuthDev</h1>
+<h3>登入</h3>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+</ul>
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form }}
+
+    <input class="btn btn-primary" type="submit" value="登入" />
+    <p>還沒有帳號嗎? <a href="{% url 'Register' %}">註冊</a></p>
+</form>
+
+{% endblock %}
