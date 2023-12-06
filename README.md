@@ -1,4 +1,5 @@
 # Django
  
-django-admin startproject project
+django-admin startproject project  
+
 python manage.py runserver
